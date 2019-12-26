@@ -1,37 +1,47 @@
-alert(123);
+// var, let & const
 
-console.log(4);
+// var name = "John Doe";
+// console.log(name);
 
-console.log(4+4);
-
-console.log(document);
-
-console.log("Hello World");
-
-console.log(true);
-
-var greeting = "Hello";
-console.log(greeting);
-
-console.log([1, 2, 3, 4, 5]);
-
-console.log({a: 1, b: 2});
-
-console.table({a: 1, b: 2});
-
-console.error("This is some error");
-
-console.clear();
-
-console.warn("This is a warning");
+// name = "Steve Smith";
+// console.log(name);
 
 
-console.time("Hello");
-    console.log("Hello World");
-    console.log("Hello World");
-    console.log("Hello World");
-    console.log("Hello World");
-    console.log("Hello World");
-    console.log("Hello World");
-    console.log("Hello World");
-console.timeEnd("Hello");
+// var greeting;
+// console.log(greeting);
+// greeting = "Hello";
+// console.log(greeting);
+
+
+// let
+// let name = "John Doe";
+// console.log(name);
+
+// name = "Steve Smith";
+// console.log(name);
+
+// const
+const name = "John";
+console.log(name);
+// name = "Sara";
+// console.log(name);
+
+// have to assign a value
+// const greeting;
+
+
+const person = {
+    name: "John",
+    age: 30
+}
+person.name = "Sara";
+console.log(person.name);
+
+const numbers = [1, 2, 3, 4, 5];
+console.log(numbers);
+
+numbers.push(6);
+console.log(numbers);
+
+// numbers = [1, 2, 3, 4, 5, 6];
+console.log(numbers);

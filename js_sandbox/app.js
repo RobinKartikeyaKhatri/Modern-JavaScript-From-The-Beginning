@@ -1,47 +1,48 @@
-// var, let & const
-
-// var name = "John Doe";
-// console.log(name);
-
-// name = "Steve Smith";
-// console.log(name);
+// Primitive Types
 
 
-// var greeting;
-// console.log(greeting);
-// greeting = "Hello";
-// console.log(greeting);
+// String
+const name = "John Doe";
+console.log(typeof name);
+
+// Number
+const age = 45;
+console.log(typeof age);
+
+// Boolean
+const hasKids = true;
+console.log(typeof hasKids);
+
+// Null
+const car = null;
+console.log(typeof car);
+
+// Undefined
+let test;
+console.log(typeof test);
+
+// Symbol
+const sym = Symbol();
+console.log(typeof sym);
 
 
-// let
-// let name = "John Doe";
-// console.log(name);
 
-// name = "Steve Smith";
-// console.log(name);
+// Reference Types
 
-// const
-const name = "John";
-console.log(name);
-// name = "Sara";
-// console.log(name);
+// Array
+const hobbies = ["movies", "music"];
+console.log(typeof hobbies);
 
-// have to assign a value
-// const greeting;
-
-
-const person = {
-    name: "John",
-    age: 30
+// Object Literal
+const address = {
+    city: "Barmer",
+    state: "Rajasthan",
+    country: "India",
+    pincode: 344001
 }
-person.name = "Sara";
-console.log(person.name);
+console.log(typeof address);
 
-const numbers = [1, 2, 3, 4, 5];
-console.log(numbers);
-
-numbers.push(6);
-console.log(numbers);
-
-// numbers = [1, 2, 3, 4, 5, 6];
-console.log(numbers);
+// Date
+const today = new Date();
+console.log(today);
+console.log(typeof today);

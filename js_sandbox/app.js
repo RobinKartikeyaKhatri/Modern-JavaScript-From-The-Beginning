@@ -1,48 +1,67 @@
-// Primitive Types
+// Type Conversion
 
+let val;
 
-// String
-const name = "John Doe";
-console.log(typeof name);
-
-// Number
-const age = 45;
-console.log(typeof age);
-
-// Boolean
-const hasKids = true;
-console.log(typeof hasKids);
-
-// Null
-const car = null;
-console.log(typeof car);
-
-// Undefined
-let test;
-console.log(typeof test);
-
-// Symbol
-const sym = Symbol();
-console.log(typeof sym);
+// Number to String
+val = String(555);
+val = String(4+4);
 
 
 
-// Reference Types
+// Boolean to String
+val = String(true);
 
-// Array
-const hobbies = ["movies", "music"];
-console.log(typeof hobbies);
 
-// Object Literal
-const address = {
-    city: "Barmer",
-    state: "Rajasthan",
-    country: "India",
-    pincode: 344001
-}
-console.log(typeof address);
 
-// Date
-const today = new Date();
-console.log(today);
-console.log(typeof today);
+// Date to String
+val = String(new Date());
+
+
+
+// Array to String
+val = String([1, 2, 3, 4]);
+
+
+
+
+// toString
+val = (5).toString();
+val = (true).toString();
+
+
+
+
+
+
+
+
+
+
+// String to Numbers
+val = Number("5");
+val = Number(true);
+val = Number(false);
+val = Number(null);
+val = Number("Hello");
+val = Number([1, 2, 3]);
+
+val = parseInt("100.30");
+val = parseFloat("100.30");
+
+
+
+// Output
+// console.log(val);
+// console.log(typeof val);
+// console.log(val.toFixed(2));
+
+
+
+
+// Type Coercion
+
+const val1 = String(5);
+const val2 = 6;
+const sum = Number(val1 + val2);
+console.log(sum);
+console.log(typeof sum);

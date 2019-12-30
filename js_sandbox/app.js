@@ -1,92 +1,69 @@
-// General Loops
+// WINDOW METHODS / OBJECTS / PROPERTIES
 
-// For Loop
+// console.log(123);
 
-// for(let i = 0; i < 10; i++) {
-//     if (i === 2) {
-//         console.log("Number " + i + " is my favorite number");
-//         continue;
-//     }
-//     console.log("Number " + i);
-// }
-
-// for(let i = 0; i < 10; i++) {
-//     if (i === 2) {
-//         console.log("Number " + i + " is my favorite number");
-//         break;
-//     }
-//     console.log("Number " + i);
-// }
+// Alert
+// alert("Hello World");
+// window.alert("Hello World");
 
 
+// Prompt
+// const input = prompt();
+// alert(input);
 
-// While Loop
-
-// let i = 0;
-// while(i < 10) {
-//     console.log(i);
-//     i++;
+// Confirm
+// if (confirm("Are you sure?")) {
+//     console.log("YES");
+// } else {
+//     console.log("NO");
 // }
 
 
 
 
+let val;
 
-// Do-While Loop
+// Outer height and width
+val = window.outerHeight;
+val = window.outerWidth;
 
-// let i = 12;
-// do {
-//     console.log("Number " + i);
-//     i++;
-// } while(i < 10);
+// Inner height and width
+val = window.innerHeight;
+val = window.innerWidth;
 
+// Scroll points
+val = window.screenY;
+val = window.scrollX;
 
-
-
-
-// Loop through Arrays
-
-const cars = ["Ford", "Chevy", "Honda", "Toyota"];
-
-// for (let i = 0; i < cars.length; i++) {
-//     console.log(cars[i]);
-// }
-
-
-// forEach Array Loop
-
-// cars.forEach(function (car, index, array) {
-//     console.log(`Car number ${index} : ${car}`);
-//     console.log(array);
-// });
+// Location Object
+val = window.location;
+val = window.location.hostname;
+val = window.location.port;
+val = window.location.href;
+val = window.location.search;
 
 
+// Redirect
+// window.location.href = "https://www.google.co.in";
 
-// MAP
+// Reload
+// window.location.reload();
 
-// const users = [
-//     {id: 1, name: "John"},
-//     {id: 2, name: "Sara"},
-//     {id: 3, name: "Karen"},
-//     {id: 4, name: "Steve"}
-// ];
 
-// const ids = users.map(function(user) {
-//     return user.id
-// });
+// History Object
+// window.history.go(-2);
 
-// console.log(ids);
+// val = window.history.length;
 
 
 
-// ForIn Loop (Often used for Object)
+// Navigator Object
+val = window.navigator;
+val = window.navigator.appName;
+val = window.navigator.appVersion;
+val = window.navigator.userAgent;
+val = window.navigator.platform;
+val = window.navigator.vendor;
+val = window.navigator.language;
 
-const user = {
-    firstName: "John",
-    lastName: "Doe",
-    age: 40
-};
-
-for (let x in user) {
-    console.log(`${x}: ${user[x]}`);
-}
+console.log(val);

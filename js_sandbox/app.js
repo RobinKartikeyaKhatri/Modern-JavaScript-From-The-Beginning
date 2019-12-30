@@ -1,74 +1,52 @@
-// Switch Statement
-const color = "yellow";
+// Function Declaration
 
-switch (color) {
-    case "red":
-        console.log("Color is red");
-        break;
-    case "blue":
-        console.log("Color is blue");
-        break;
-    default:
-        console.log("Color is not red or blue");
-        break;
+function greet(firstName = "John", lastName = "Doe") {
+    // console.log("Hello");
+    return "Hello " + firstName + " " + lastName;
 }
 
-switch(new Date().getDay()) {
-    case 0:
-        console.log("Today is Sunday");
-        break;
-    case 1:
-        console.log("Today is Monday");
-        break;
-    case 2:
-        console.log("Today is Tuesday");
-        break;
-    case 3:
-        console.log("Today is Wednesday");
-        break;
-    case 4:
-        console.log("Today is Thursday");
-        break;
-    case 5:
-        console.log("Today is Friday");
-        break;
-    case 6:
-        console.log("Today is Saturday");
-    default: 
-        console.log("Not a day!!!!");
-        break;
+// console.log(greet());
+
+
+
+
+// Function Expressions
+
+const square = function(num) {
+    return num * num;
+};
+
+// console.log(square(8));
+
+
+
+// Immediatly Invokable Function Expressions (IIFE)
+
+// (function(){
+//     console.log("IIFE RAN...");
+// })();
+
+// (function(name){
+//     console.log("Hello " + name);
+// })("Robin");
+
+
+
+// Property Methods
+
+const todo = {
+    add: function() {
+        console.log("Add todo...");
+    },
+    edit: function(id) {
+        console.log(`Edit todo ${id}`);
+    }
 }
 
-
-
-
-
-
-
-let day;
-
-switch(new Date().getDay()) {
-    case 0:
-        day = "Sunday";
-        break;
-    case 1:
-        day = "Monday";
-        break;
-    case 2:
-        day = "Tuesday";
-        break;
-    case 3:
-        day = "Wednesday";
-        break;
-    case 4:
-        day = "Thursady";
-        break;
-    case 5:
-        day = "Friday";
-        break;
-    case 6:
-        day = "Saturday";
-        break;
+todo.delete = function() {
+    console.log("Delete todo...");
 }
 
-console.log(`Today is ${day}`);
+todo.add();
+todo.edit(22);
+todo.delete();

@@ -1,52 +1,92 @@
-// Function Declaration
+// General Loops
 
-function greet(firstName = "John", lastName = "Doe") {
-    // console.log("Hello");
-    return "Hello " + firstName + " " + lastName;
-}
+// For Loop
 
-// console.log(greet());
+// for(let i = 0; i < 10; i++) {
+//     if (i === 2) {
+//         console.log("Number " + i + " is my favorite number");
+//         continue;
+//     }
+//     console.log("Number " + i);
+// }
+
+// for(let i = 0; i < 10; i++) {
+//     if (i === 2) {
+//         console.log("Number " + i + " is my favorite number");
+//         break;
+//     }
+//     console.log("Number " + i);
+// }
+
+
+
+// While Loop
+
+// let i = 0;
+// while(i < 10) {
+//     console.log(i);
+//     i++;
+// }
 
 
 
 
-// Function Expressions
 
-const square = function(num) {
-    return num * num;
+// Do-While Loop
+
+// let i = 12;
+// do {
+//     console.log("Number " + i);
+//     i++;
+// } while(i < 10);
+
+
+
+
+
+// Loop through Arrays
+
+const cars = ["Ford", "Chevy", "Honda", "Toyota"];
+
+// for (let i = 0; i < cars.length; i++) {
+//     console.log(cars[i]);
+// }
+
+
+// forEach Array Loop
+
+// cars.forEach(function (car, index, array) {
+//     console.log(`Car number ${index} : ${car}`);
+//     console.log(array);
+// });
+
+
+
+// MAP
+
+// const users = [
+//     {id: 1, name: "John"},
+//     {id: 2, name: "Sara"},
+//     {id: 3, name: "Karen"},
+//     {id: 4, name: "Steve"}
+// ];
+
+// const ids = users.map(function(user) {
+//     return user.id
+// });
+
+// console.log(ids);
+
+
+
+// ForIn Loop (Often used for Object)
+
+const user = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 40
 };
 
-// console.log(square(8));
-
-
-
-// Immediatly Invokable Function Expressions (IIFE)
-
-// (function(){
-//     console.log("IIFE RAN...");
-// })();
-
-// (function(name){
-//     console.log("Hello " + name);
-// })("Robin");
-
-
-
-// Property Methods
-
-const todo = {
-    add: function() {
-        console.log("Add todo...");
-    },
-    edit: function(id) {
-        console.log(`Edit todo ${id}`);
-    }
+for (let x in user) {
+    console.log(`${x}: ${user[x]}`);
 }
-
-todo.delete = function() {
-    console.log("Delete todo...");
-}
-
-todo.add();
-todo.edit(22);
-todo.delete();

@@ -1,45 +1,37 @@
-const form = document.querySelector("form");
-const taskInput = document.getElementById("task");
-const heading = document.querySelector("h5");
-const select = document.querySelector("select");
+// EVENT BUBBLING
 
-// Clear input
-taskInput.value = '';
+// document.querySelector(".card-title").addEventListener("click", function() {
+//     console.log('card title');
+// });
 
-// form.addEventListener("submit", runEvent);
+// document.querySelector(".card-content").addEventListener("click", function() {
+//     console.log('card content');
+// });
 
-// keydown
-// taskInput.addEventListener("keydown", runEvent);
+// document.querySelector(".card").addEventListener("click", function() {
+//     console.log('card');
+// });
 
-// keyup
-// taskInput.addEventListener("keyup", runEvent);
+// document.querySelector(".col").addEventListener("click", function() {
+//     console.log('col');
+// });
 
-// keypress
-// taskInput.addEventListener("keypress", runEvent);
 
-// focus
-// taskInput.addEventListener("focus", runEvent);
+// EVENT DELEGATION
 
-// blur
-// taskInput.addEventListener("blur", runEvent);
+// const delItem = document.querySelector(".delete-item");
+// delItem.addEventListener("click", deleteItem);
 
-// cut
-// taskInput.addEventListener("cut", runEvent);
+document.body.addEventListener("click", deleteItem);
 
-// paste
-// taskInput.addEventListener("paste", runEvent);
 
-// input
-// taskInput.addEventListener("input", runEvent);
+function deleteItem(e) {
+    // if(e.target.parentElement.className === 'delete-item secondary-content') {
+    //     console.log("delete item");
+    // }
 
-// change
-select.addEventListener("change", runEvent);
-
-function runEvent(e) {
-    console.log(`EVENT TYPE: ${e.type}`);
-    console.log(e.target.value);
-    // heading.innerText = e.target.value;
-    // Get input value
-    // console.log(taskInput.value);
-    // e.preventDefault();
+    if (e.target.parentElement.classList.contains("delete-item")) {
+        console.log('delete item');
+        e.target.parentElement.parentElement.remove();
+    }
 }

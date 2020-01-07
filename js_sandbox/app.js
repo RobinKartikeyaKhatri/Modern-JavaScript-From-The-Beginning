@@ -1,42 +1,19 @@
-// set local storage item
-// localStorage.setItem("name", "John");
-// localStorage.setItem("age", "30");
-
-// set session storage item
-// sessionStorage.setItem("name", "Beth");
-
-// remove from local storage
-// localStorage.removeItem("name");
-
-// get from local storage
-// const name = localStorage.getItem("name");
-// const age = localStorage.getItem("age");
-
-// localStorage.clear();
-
-// console.log(name, age);
-
-document.querySelector("form").addEventListener("submit", function(e) {
-    const task = document.getElementById('task').value;
-
-    let tasks;
-
-    if (localStorage.getItem('tasks') === null) {
-        tasks = [];
-    } else {
-        tasks = JSON.parse(localStorage.getItem('tasks'));
+// Person Constructor
+function Person(name, dob) {
+    this.name = name;
+    // this.age = age;
+    this.birthday = new Date(dob);
+    this.calculateAge = function() {
+        const diff = Date.now() - this.birthday.getTime();
+        const ageDate = new Date(diff);
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
     }
+}
 
-    tasks.push(task);
+// const brad = new Person("Brad", 36);
+// const john = new Person("John", 30);
 
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    alert("Task saved");
+// console.log(john.age);
 
-    e.preventDefault();
-});
-
-const tasks = JSON.parse(localStorage.getItem('tasks'));
-
-tasks.forEach(function(task) {
-    console.log(task);
-});
+const brad = new Person("Brad", "9-10-1980");
+console.log(brad.calculateAge());

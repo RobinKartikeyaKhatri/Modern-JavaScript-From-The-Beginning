@@ -14,9 +14,9 @@ const ItemCtrl = (function() {
     // Data Structure / State
     const data = {
         items: [
-            { id: 0, name: "Steak Dinner", calories: 1200},
-            { id: 1, name: "Cookie", calories: 400},
-            { id: 2, name: "Eggs", calories: 300}
+            // { id: 0, name: "Steak Dinner", calories: 1200},
+            // { id: 1, name: "Cookie", calories: 400},
+            // { id: 2, name: "Eggs", calories: 300}
         ],
         currentItem: null,
         totalCalories: 0
@@ -88,6 +88,39 @@ const UICtrl = (function() {
                 calories: document.querySelector(UISelectors.itemCaloriesInput).value
             }
         },
+
+        addListItem: function(item) {
+            // Show the list
+            document.querySelector(UISelectors.itemList).style.display = "block";
+            
+            // Create li element
+            const li = document.createElement("li");
+
+            // Add class
+            li.className = "collection-item";
+
+            // Add ID
+            li.id = `item-${item.id}`;
+
+            // Add HTML
+            li.innerHTML = `<strong>${item.name}: </strong> <em>${item.calories} Calories</em>
+            <a href="#" class="secondary-content">
+                <i class="edit-item fa fa-pencil"></i>
+            </a>`;
+
+            // Insert item
+            document.querySelector(UISelectors.itemList).insertAdjacentElement("beforeend", li)
+        },
+
+        clearInput: function() {
+            document.querySelector(UISelectors.itemNameInput).value = "";
+            document.querySelector(UISelectors.itemCaloriesInput).value = "";
+        },
+
+        hideLists: function() {
+            document.querySelector(UISelectors.itemList).style.display = "none"
+        },
+
         getSelectors: function() {
             return UISelectors;
         }
@@ -115,6 +148,12 @@ const App = (function(ItemCtrl, UICtrl) {
         if (input.name !== "" && input.calories !== "") {
             // Add item
             const newItem = ItemCtrl.addItem(input.name, input.calories);
+
+            // Add item to UI list
+            UICtrl.addListItem(newItem);
+
+            // Clear fields
+            UICtrl.clearInput();
         }
 
         e.preventDefault();
@@ -125,9 +164,14 @@ const App = (function(ItemCtrl, UICtrl) {
         init: function() {            
             // Fetch items from data structure
             const items = ItemCtrl.getItems();
-            
-            // Populate list with items
-            UICtrl.populateItemList(items);
+           
+            // Check if any items
+            if (items.length === 0) {
+                UICtrl.hideLists();
+            } else {
+                // Populate list with items
+                UICtrl.populateItemList(items);
+            }
 
             // Load event listeners
             loadEventListeners();
